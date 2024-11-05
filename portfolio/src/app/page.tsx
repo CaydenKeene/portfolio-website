@@ -2,24 +2,24 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900">
       {/* Hero Section */}
-      <section className="flex min-h-screen items-center justify-center bg-gradient-to-b from-white to-gray-100 px-8">
+      <section className="flex min-h-screen items-center justify-center bg-gradient-to-br from-transparent via-purple-900/30 to-transparent px-8">
         <div className="text-center">
-          <h1 className="mb-4 text-6xl font-bold text-gray-800">John Doe</h1>
-          <p className="mb-6 text-xl text-gray-600">Full Stack Developer</p>
-          <button className="rounded-full bg-blue-600 px-8 py-3 text-white transition hover:bg-blue-700">
+          <h1 className="mb-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">John Doe</h1>
+          <p className="mb-6 text-xl text-purple-200">Full Stack Developer</p>
+          <button className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 text-white transition-all hover:scale-105 hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:shadow-purple-500/30">
             Get in touch
           </button>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-8 bg-gradient-to-b from-slate-900/50 via-purple-900/50 to-slate-900/50">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center text-4xl font-bold text-gray-800">About Me</h2>
+          <h2 className="mb-12 text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">About Me</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="relative h-64 overflow-hidden rounded-lg md:h-auto">
+            <div className="relative h-64 overflow-hidden rounded-2xl md:h-auto border-2 border-purple-500/30 shadow-lg shadow-purple-500/20">
               <Image
                 src="/profile.jpg"
                 alt="Profile"
@@ -29,7 +29,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-purple-200">
                 I'm a passionate developer with experience in building modern web applications.
                 I specialize in React, TypeScript, and Node.js.
               </p>
@@ -39,12 +39,12 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="bg-white py-20 px-8">
+      <section className="py-20 px-8 bg-gradient-to-b from-slate-900/50 via-purple-900/50 to-slate-900/50">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center text-4xl font-bold text-gray-800">My Projects</h2>
+          <h2 className="mb-12 text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">My Projects</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((project) => (
-              <div key={project} className="group overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl">
+              <div key={project} className="group overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/50 to-slate-900/50 backdrop-blur-sm border border-purple-500/30 transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20">
                 <div className="relative h-48">
                   <Image
                     src={`/project${project}.jpg`}
@@ -54,11 +54,11 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="mb-2 text-xl font-semibold">Project Title</h3>
-                  <p className="text-gray-600">Brief project description goes here.</p>
+                  <h3 className="mb-2 text-xl font-semibold text-purple-200">Project Title</h3>
+                  <p className="text-purple-300">Brief project description goes here.</p>
                   <div className="mt-4 flex gap-2">
-                    <span className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800">React</span>
-                    <span className="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800">Node.js</span>
+                    <span className="rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 text-sm text-purple-200 border border-purple-500/30">React</span>
+                    <span className="rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 text-sm text-purple-200 border border-purple-500/30">Node.js</span>
                   </div>
                 </div>
               </div>
@@ -68,15 +68,15 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-8">
+      <section className="py-20 px-8 bg-gradient-to-b from-slate-900/50 via-purple-900/50 to-slate-900/50">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-12 text-4xl font-bold text-gray-800">Get In Touch</h2>
-          <p className="mb-8 text-lg text-gray-600">
+          <h2 className="mb-12 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Get In Touch</h2>
+          <p className="mb-8 text-lg text-purple-200">
             I'm always open to new opportunities and interesting projects.
           </p>
           <a
             href="mailto:contact@example.com"
-            className="inline-block rounded-full bg-blue-600 px-8 py-3 text-white transition hover:bg-blue-700"
+            className="inline-block rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 text-white transition-all hover:scale-105 hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:shadow-purple-500/30"
           >
             Email Me
           </a>
