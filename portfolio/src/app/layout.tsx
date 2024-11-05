@@ -28,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="no-scrollbar h-screen overflow-y-scroll">
         {children}
+        </div>
       </body>
     </html>
   );
