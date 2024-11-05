@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900">
       {/* Hero Section */}
-      <section className="flex min-h-screen items-center justify-center bg-gradient-to-br from-transparent via-purple-900/30 to-transparent px-8">
+      <section className="flex min-h-screen items-center justify-center px-8">
         <div className="text-center">
-          <h1 className="mb-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">John Doe</h1>
-          <p className="mb-6 text-xl text-purple-200">Full Stack Developer</p>
+          <h1 className="mb-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Cayden Keene</h1>
+          <p className="mb-6 text-xl text-purple-200">Computer Science Student at the University of Florida</p>
           <button className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 text-white transition-all hover:scale-105 hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:shadow-purple-500/30">
             Get in touch
           </button>
@@ -15,7 +15,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-8 bg-gradient-to-b from-slate-900/50 via-purple-900/50 to-slate-900/50">
+      <section className="py-20 px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-12 text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">About Me</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-8 bg-gradient-to-b from-slate-900/50 via-purple-900/50 to-slate-900/50">
+      <section className="py-20 px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-12 text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">My Projects</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-8 bg-gradient-to-b from-slate-900/50 via-purple-900/50 to-slate-900/50">
+      <section className="py-20 px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-12 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Get In Touch</h2>
           <p className="mb-8 text-lg text-purple-200">
