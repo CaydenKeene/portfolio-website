@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ThemeToggle } from "./theme-toggle"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export function Navigation() {
