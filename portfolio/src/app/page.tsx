@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import { ProfileImage } from "@/components/ProfileImage"
 
 export default function Home() {
   return (
@@ -12,26 +13,48 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-            {" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Cayden Keene
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Computer Science Student at University of Florida passionate about building 
-            innovative solutions and exploring the latest technologies.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link href="/contact">Get In Touch</Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/experience">View My Work</Link>
-            </Button>
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Name and Description */}
+            <div className="flex-1 text-center md:text-left order-2 md:order-1">
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Cayden Keene
+                </span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Computer Science Student at University of Florida passionate about building 
+                innovative solutions and exploring the latest technologies.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button asChild size="lg">
+                  <Link href="/contact">Get In Touch</Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="/experience">View My Work</Link>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Profile Picture */}
+            <div className="flex-shrink-0 order-1 md:order-2">
+              <div className="relative">
+                <div className="w-72 h-72 md:w-96 md:h-96 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 p-1">
+                  <div className="w-full h-full rounded-lg bg-background flex items-center justify-center">
+                    {/* Profile image with fallback */}
+                    <ProfileImage 
+                      src="/assets/profile/profile-photo.jpg" 
+                      alt="Cayden Keene"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex justify-center gap-6 mt-8">
+          
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mt-12">
             <Button variant="ghost" size="icon" asChild>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
