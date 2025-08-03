@@ -16,16 +16,16 @@ export function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
+      <div className="flex h-14 w-full items-center justify-between px-4 md:px-6 lg:px-8">
         {/* Name/Logo on the left */}
-        <Link href="/" className="flex items-center space-x-2 ml-5">
+        <Link href="/" className="flex items-center space-x-2">
           <span className="font-bold text-lg">
             Cayden Keene
           </span>
         </Link>
         
         {/* Navigation items and theme toggle on the right */}
-        <div className="flex items-center gap-6 mr-4">
+        <div className="flex items-center gap-6">
           <nav className="flex items-center gap-6 text-sm">
             {navItems.map((item) => (
               <Link

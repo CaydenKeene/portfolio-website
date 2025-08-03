@@ -52,25 +52,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
-          {/* Social Links */}
-          <div className="flex justify-center gap-6 mt-12">
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/contact">
-                <Mail className="h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
 
