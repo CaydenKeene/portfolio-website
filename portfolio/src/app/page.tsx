@@ -2,7 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { ProfileImage } from "@/components/ProfileImage"
 
