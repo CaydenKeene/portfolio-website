@@ -2,309 +2,322 @@ import { Navigation } from "@/components/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Star, Calendar, Code } from "lucide-react"
+import { ExternalLink, Github, Calendar, Code, Smartphone, Car, Printer, Zap } from "lucide-react"
 
 export default function Projects() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center p-2 bg-blue-100 dark:bg-blue-900/20 rounded-full mb-6">
-              <Code className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full mb-8 shadow-lg">
+              <Code className="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
-            <h1 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                My Projects
-              </span>
+            <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              My Projects
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of my passion for building innovative solutions and exploring cutting-edge technologies. 
-              Each project represents a journey of learning, creativity, and problem-solving.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A curated collection of my most significant projects, spanning mobile development, 
+              web applications, hardware engineering, and competitive achievements.
             </p>
           </div>
 
-          {/* Featured Project */}
-          <section className="mb-16">
-            <div className="flex items-center mb-8">
-              <Star className="h-6 w-6 text-yellow-500 mr-2" />
-              <h2 className="text-3xl font-bold">Featured Project</h2>
-            </div>
-            
-            <Card className="border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50">
-              <CardHeader className="pb-4">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                  <div>
-                    <CardTitle className="text-2xl flex items-center">
-                      Portfolio Website
-                      <Badge variant="secondary" className="ml-3">Featured</Badge>
-                    </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                      Modern, responsive portfolio showcasing clean design and optimal performance
-                    </CardDescription>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">2024</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                  A cutting-edge portfolio website built with Next.js 15 and modern web technologies. 
-                  Features include seamless dark/light mode switching, responsive design across all devices, 
-                  optimized performance with excellent Core Web Vitals, and a component-based architecture 
-                  using Shadcn UI for consistent, accessible user experiences.
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-muted-foreground">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="bg-blue-100 dark:bg-blue-900/20 border-blue-300 dark:border-blue-700">Next.js 15</Badge>
-                    <Badge variant="outline" className="bg-blue-100 dark:bg-blue-900/20 border-blue-300 dark:border-blue-700">TypeScript</Badge>
-                    <Badge variant="outline" className="bg-cyan-100 dark:bg-cyan-900/20 border-cyan-300 dark:border-cyan-700">Tailwind CSS</Badge>
-                    <Badge variant="outline" className="bg-purple-100 dark:bg-purple-900/20 border-purple-300 dark:border-purple-700">Shadcn UI</Badge>
-                    <Badge variant="outline" className="bg-green-100 dark:bg-green-900/20 border-green-300 dark:border-green-700">React 18</Badge>
-                    <Badge variant="outline" className="bg-orange-100 dark:bg-orange-900/20 border-orange-300 dark:border-orange-700">Vercel</Badge>
-                  </div>
-                </div>
-                
-                <div className="flex flex-wrap gap-3">
-                  <Button size="lg" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      View Source
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
-
-          {/* Other Projects */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Other Projects</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              
-              {/* Task Management App */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Task Management Platform
-                      </CardTitle>
-                      <CardDescription className="mt-2">
-                        Full-stack productivity application with real-time collaboration
-                      </CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-200">
-                      In Progress
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Comprehensive task management solution featuring user authentication, 
-                    real-time collaboration through WebSockets, data visualization dashboards, 
-                    and team productivity analytics.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline" className="text-xs">React</Badge>
-                    <Badge variant="outline" className="text-xs">Node.js</Badge>
-                    <Badge variant="outline" className="text-xs">PostgreSQL</Badge>
-                    <Badge variant="outline" className="text-xs">Socket.io</Badge>
-                    <Badge variant="outline" className="text-xs">Express</Badge>
-                  </div>
-                  <Button size="sm" variant="outline" disabled className="w-full">
-                    <Github className="mr-2 h-4 w-4" />
-                    Coming Soon
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Data Visualization */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Analytics Dashboard
-                      </CardTitle>
-                      <CardDescription className="mt-2">
-                        Interactive data visualization platform for business intelligence
-                      </CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="bg-gray-100 dark:bg-gray-900/20 text-gray-800 dark:text-gray-200">
-                      Planning
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Advanced analytics platform featuring real-time charts, customizable widgets, 
-                    data export functionality, and machine learning insights for data-driven 
-                    decision making.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline" className="text-xs">Python</Badge>
-                    <Badge variant="outline" className="text-xs">Flask</Badge>
-                    <Badge variant="outline" className="text-xs">D3.js</Badge>
-                    <Badge variant="outline" className="text-xs">ML</Badge>
-                    <Badge variant="outline" className="text-xs">REST APIs</Badge>
-                  </div>
-                  <Button size="sm" variant="outline" disabled className="w-full">
-                    <Github className="mr-2 h-4 w-4" />
-                    In Development
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Mobile App */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Fitness Tracking App
-                      </CardTitle>
-                      <CardDescription className="mt-2">
-                        Cross-platform mobile application for health and fitness
-                      </CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200">
-                      Concept
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Mobile application for tracking workouts, nutrition, and health metrics. 
-                    Features social sharing, progress visualization, and personalized 
-                    workout recommendations.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline" className="text-xs">React Native</Badge>
-                    <Badge variant="outline" className="text-xs">TypeScript</Badge>
-                    <Badge variant="outline" className="text-xs">Firebase</Badge>
-                    <Badge variant="outline" className="text-xs">Redux</Badge>
-                    <Badge variant="outline" className="text-xs">Charts</Badge>
-                  </div>
-                  <Button size="sm" variant="outline" disabled className="w-full">
-                    <Github className="mr-2 h-4 w-4" />
-                    Future Project
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Algorithm Visualizer */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Algorithm Visualizer
-                      </CardTitle>
-                      <CardDescription className="mt-2">
-                        Interactive educational tool for learning computer science algorithms
-                      </CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-200">
-                      Prototype
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Educational platform for visualizing sorting algorithms, graph traversals, 
-                    and data structures. Includes step-by-step animations, complexity analysis, 
-                    and interactive code examples.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline" className="text-xs">JavaScript</Badge>
-                    <Badge variant="outline" className="text-xs">Canvas API</Badge>
-                    <Badge variant="outline" className="text-xs">Algorithms</Badge>
-                    <Badge variant="outline" className="text-xs">Education</Badge>
-                    <Badge variant="outline" className="text-xs">Animation</Badge>
-                  </div>
-                  <Button size="sm" variant="outline" disabled className="w-full">
-                    <Github className="mr-2 h-4 w-4" />
-                    Early Stage
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
-
-          {/* Technical Skills */}
+          {/* Projects Grid */}
           <section>
-            <h2 className="text-3xl font-bold mb-8">Technical Expertise</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="border-l-4 border-l-blue-500">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Frontend Development
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">Next.js</Badge>
-                    <Badge variant="secondary">TypeScript</Badge>
-                    <Badge variant="secondary">Tailwind CSS</Badge>
-                    <Badge variant="secondary">HTML/CSS</Badge>
-                    <Badge variant="secondary">JavaScript</Badge>
-                    <Badge variant="secondary">Responsive Design</Badge>
+            <div className="grid lg:grid-cols-2 gap-12">
+              
+              {/* Airspace Quiz */}
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white dark:bg-gray-900 shadow-lg overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-sky-100 to-blue-200 dark:from-sky-900/30 dark:to-blue-900/50 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <Smartphone className="h-16 w-16 text-sky-600 dark:text-sky-400 mx-auto mb-4" />
+                      <p className="text-sky-700 dark:text-sky-300 font-medium">Project Image</p>
+                      <p className="text-sm text-sky-600 dark:text-sky-400">Upload your app screenshot here</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="p-2 bg-sky-100 dark:bg-sky-900/30 rounded-lg mr-3">
+                        <Smartphone className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          Airspace Quiz
+                        </h3>
+                        <div className="flex items-center text-sm text-muted-foreground mt-1">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          Jan. 2025 - Present
+                        </div>
+                      </div>
+                    </div>
+                    <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-0">
+                      Published
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Contracted by the CEO of Blue Sarq to develop a comprehensive mobile platform 
+                    that helps aspiring pilots master airspace regulations. Successfully deployed 
+                    to the Apple App Store with full-stack architecture.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {['React Native', 'Expo', 'TypeScript', 'PostgreSQL', 'Supabase'].map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <Button className="flex-1" variant="outline">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      App Store
+                    </Button>
+                    <Button className="flex-1" variant="outline">
+                      <Github className="mr-2 h-4 w-4" />
+                      GitHub
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-green-500">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Backend Development
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Node.js</Badge>
-                    <Badge variant="secondary">Python</Badge>
-                    <Badge variant="secondary">Java</Badge>
-                    <Badge variant="secondary">Express</Badge>
-                    <Badge variant="secondary">REST APIs</Badge>
-                    <Badge variant="secondary">PostgreSQL</Badge>
-                    <Badge variant="secondary">MongoDB</Badge>
+              {/* FTC Queuing */}
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white dark:bg-gray-900 shadow-lg overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-indigo-100 to-purple-200 dark:from-indigo-900/30 dark:to-purple-900/50 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <Zap className="h-16 w-16 text-indigo-600 dark:text-indigo-400 mx-auto mb-4" />
+                      <p className="text-indigo-700 dark:text-indigo-300 font-medium">Project Image</p>
+                      <p className="text-sm text-indigo-600 dark:text-indigo-400">Upload your platform screenshot here</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg mr-3">
+                        <Zap className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          FTC Queuing Platform
+                        </h3>
+                        <div className="flex items-center text-sm text-muted-foreground mt-1">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          Dec. 2024 - Present
+                        </div>
+                      </div>
+                    </div>
+                    <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-0">
+                      Live
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Revolutionary platform for FIRST Tech Challenge robotics competitions. 
+                    Teams scan QR codes to receive SMS notifications when it's time to queue 
+                    for matches. Deployed at major championships with 250+ active users.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {['Next.js', 'TypeScript', 'Tailwind', 'REST API', 'Vercel', 'Twilio'].map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <Button className="flex-1" variant="outline">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Platform
+                    </Button>
+                    <Button className="flex-1" variant="outline">
+                      <Github className="mr-2 h-4 w-4" />
+                      Source Code
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-purple-500">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Tools & Technologies
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Git</Badge>
-                    <Badge variant="secondary">GitHub</Badge>
-                    <Badge variant="secondary">VS Code</Badge>
-                    <Badge variant="secondary">Linux</Badge>
-                    <Badge variant="secondary">Docker</Badge>
-                    <Badge variant="secondary">Vercel</Badge>
-                    <Badge variant="secondary">AWS</Badge>
+              {/* Solar Car Competition */}
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white dark:bg-gray-900 shadow-lg overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-yellow-100 to-orange-200 dark:from-yellow-900/30 dark:to-orange-900/50 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <Car className="h-16 w-16 text-yellow-600 dark:text-yellow-400 mx-auto mb-4" />
+                      <p className="text-yellow-700 dark:text-yellow-300 font-medium">Project Image</p>
+                      <p className="text-sm text-yellow-600 dark:text-yellow-400">Upload your solar car photo here</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg mr-3">
+                        <Car className="h-5 w-5 text-yellow-600 dark:text-yellow-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          Solar Car Competition
+                        </h3>
+                        <div className="flex items-center text-sm text-muted-foreground mt-1">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          Mar. 2023 - Apr. 2023
+                        </div>
+                      </div>
+                    </div>
+                    <Badge className="bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400 border-0">
+                      2nd Place
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Led a four-person engineering team in designing and building a solar-powered 
+                    vehicle for the FL Gulf Coast University competition. Our 900-watt solar array 
+                    design secured 2nd place out of 15 competing teams.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {['Solar Engineering', 'Team Leadership', 'Hardware Design', 'DC Motors', 'Competition'].map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full" variant="outline">
+                    <Github className="mr-2 h-4 w-4" />
+                    Project Documentation
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* 3D Printer Construction */}
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white dark:bg-gray-900 shadow-lg overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-emerald-100 to-teal-200 dark:from-emerald-900/30 dark:to-teal-900/50 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <Printer className="h-16 w-16 text-emerald-600 dark:text-emerald-400 mx-auto mb-4" />
+                      <p className="text-emerald-700 dark:text-emerald-300 font-medium">Project Image</p>
+                      <p className="text-sm text-emerald-600 dark:text-emerald-400">Upload your 3D printer photo here</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg mr-3">
+                        <Printer className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          DIY 3D Printer Build
+                        </h3>
+                        <div className="flex items-center text-sm text-muted-foreground mt-1">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          Jul. 2022 - Aug. 2022
+                        </div>
+                      </div>
+                    </div>
+                    <Badge className="bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400 border-0">
+                      Hardware
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Engineered a custom 3D printer from scratch using the Voron 0.1 platform. 
+                    Self-printed majority of components and configured advanced Klipper firmware 
+                    on Raspberry Pi for precision control and monitoring.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {['Voron 0.1', 'Klipper Firmware', 'Raspberry Pi', '3D Printing', 'Hardware Assembly'].map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full" variant="outline">
+                    <Github className="mr-2 h-4 w-4" />
+                    Build Documentation
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Portfolio Website */}
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white dark:bg-gray-900 shadow-lg overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-200 dark:from-blue-900/30 dark:to-purple-900/50 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <Code className="h-16 w-16 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+                      <p className="text-blue-700 dark:text-blue-300 font-medium">Live Website</p>
+                      <p className="text-sm text-blue-600 dark:text-blue-400">Current portfolio you're viewing</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg mr-3">
+                        <Code className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          Portfolio Website
+                        </h3>
+                        <div className="flex items-center text-sm text-muted-foreground mt-1">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          Jan. 2025 - Present
+                        </div>
+                      </div>
+                    </div>
+                    <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-0">
+                      Live
+                    </Badge>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    A sophisticated portfolio website crafted with Next.js 15 and modern web technologies. 
+                    Features seamless dark/light mode theming, responsive design across all devices, 
+                    optimized performance, and component-based architecture using Shadcn UI.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'React 18', 'Vercel'].map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-3">
+                    <Button className="flex-1" variant="outline">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Site
+                    </Button>
+                    <Button className="flex-1" variant="outline">
+                      <Github className="mr-2 h-4 w-4" />
+                      Source Code
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
