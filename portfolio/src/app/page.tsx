@@ -138,8 +138,16 @@ export default function Home() {
                 <Button asChild size="lg">
                   <Link href="/contact">Get In Touch</Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link href="/projects">View My Work</Link>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  onClick={() => {
+                    document.getElementById('experience')?.scrollIntoView({
+                      behavior: 'smooth'
+                    });
+                  }}
+                >
+                  View My Work
                 </Button>
               </div>
             </div>
@@ -147,7 +155,7 @@ export default function Home() {
             {/* Profile Picture */}
             <div className="flex-shrink-0 order-1 md:order-2">
               <div className="relative">
-                <div className="w-72 h-72 md:w-96 md:h-96 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 p-1">
+                <div className="w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 p-1">
                   <div className="w-full h-full rounded-lg bg-background flex items-center justify-center">
                     {/* Profile image with fallback */}
                     <ProfileImage 
@@ -199,21 +207,19 @@ export default function Home() {
                 </div>
                 <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 px-4 py-2 text-sm">
                   <Calendar className="mr-2 h-4 w-4" />
-                  2022 - 2026
+                  2023 - 2026
                 </Badge>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
                 <h3 className="font-bold text-xl mb-2">Bachelor of Science in Computer Science</h3>
-                <p className="text-muted-foreground text-lg">Expected Graduation: May 2026</p>
-                <p className="text-muted-foreground text-base mt-1">GPA: 3.7/4.0</p>
+                <p className="text-muted-foreground text-lg">Expected Graduation: December 2026</p>
               </div>
               <div>
                 <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-muted-foreground">Relevant Coursework</h4>
                 <p className="text-muted-foreground leading-relaxed text-base">
-                  Data Structures & Algorithms, Object-Oriented Programming, Programming Fundamentals, 
-                  Discrete Structures, Computer Organization, Calculus I & II, Physics I & II
+                  Data Structures, Discrete Structures, Computer Organization, Algorithms, Intro to Software Engineering, <br /> Databases, Operating Systems
                 </p>
               </div>
               <div>
@@ -221,8 +227,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/50 border-blue-300 dark:border-blue-700">Software Development</Badge>
                   <Badge variant="outline" className="bg-purple-50 dark:bg-purple-950/50 border-purple-300 dark:border-purple-700">Web Development</Badge>
-                  <Badge variant="outline" className="bg-green-50 dark:bg-green-950/50 border-green-300 dark:border-green-700">Programming</Badge>
-                  <Badge variant="outline" className="bg-orange-50 dark:bg-orange-950/50 border-orange-300 dark:border-orange-700">Problem Solving</Badge>
+                  <Badge variant="outline" className="bg-orange-50 dark:bg-orange-950/50 border-orange-300 dark:border-orange-700">Hackathons</Badge>
                 </div>
               </div>
             </CardContent>
@@ -231,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* Work Experience Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section id="experience" className="container mx-auto px-4 py-20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center justify-center p-3 bg-gradient-to-br from-green-100 to-green-50 dark:from-green-900/30 dark:to-green-900/10 rounded-full mb-6 shadow-sm">
