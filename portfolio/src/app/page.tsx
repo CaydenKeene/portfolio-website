@@ -13,15 +13,107 @@ import {
 } from "@/components/ui/carousel"
 import { GraduationCap, MapPin, Calendar, Building2, Briefcase } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { ProfileImage } from "@/components/ProfileImage"
 import Autoplay from "embla-carousel-autoplay"
-import { useRef } from "react"
+import { useState, useEffect } from "react"
 
 export default function Home() {
-  const plugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  )
+  const [boaCurrentSlide, setBoaCurrentSlide] = useState(0)
+  const [boaApi, setBoaApi] = useState<any>(null)
+  
+  const [qtCurrentSlide, setQtCurrentSlide] = useState(0)
+  const [qtApi, setQtApi] = useState<any>(null)
+  
+  const [ftcCurrentSlide, setFtcCurrentSlide] = useState(0)
+  const [ftcApi, setFtcApi] = useState<any>(null)
+  
+  const [lanaiCurrentSlide, setLanaiCurrentSlide] = useState(0)
+  const [lanaiApi, setLanaiApi] = useState<any>(null)
+  
+  const [blueSarqCurrentSlide, setBlueSarqCurrentSlide] = useState(0)
+  const [blueSarqApi, setBlueSarqApi] = useState<any>(null)
 
+  // Listen for slide changes on BOA carousel
+  useEffect(() => {
+    if (!boaApi) return
+
+    const onSelect = () => {
+      setBoaCurrentSlide(boaApi.selectedScrollSnap())
+    }
+
+    boaApi.on('select', onSelect)
+    onSelect() // Set initial value
+
+    return () => {
+      boaApi.off('select', onSelect)
+    }
+  }, [boaApi])
+
+  // Listen for slide changes on Qt;Athon carousel
+  useEffect(() => {
+    if (!qtApi) return
+
+    const onSelect = () => {
+      setQtCurrentSlide(qtApi.selectedScrollSnap())
+    }
+
+    qtApi.on('select', onSelect)
+    onSelect()
+
+    return () => {
+      qtApi.off('select', onSelect)
+    }
+  }, [qtApi])
+
+  // Listen for slide changes on FIRST Tech Challenge carousel
+  useEffect(() => {
+    if (!ftcApi) return
+
+    const onSelect = () => {
+      setFtcCurrentSlide(ftcApi.selectedScrollSnap())
+    }
+
+    ftcApi.on('select', onSelect)
+    onSelect()
+
+    return () => {
+      ftcApi.off('select', onSelect)
+    }
+  }, [ftcApi])
+
+  // Listen for slide changes on Lanai Bright carousel
+  useEffect(() => {
+    if (!lanaiApi) return
+
+    const onSelect = () => {
+      setLanaiCurrentSlide(lanaiApi.selectedScrollSnap())
+    }
+
+    lanaiApi.on('select', onSelect)
+    onSelect()
+
+    return () => {
+      lanaiApi.off('select', onSelect)
+    }
+  }, [lanaiApi])
+
+  // Listen for slide changes on Blue Sarq carousel
+  useEffect(() => {
+    if (!blueSarqApi) return
+
+    const onSelect = () => {
+      setBlueSarqCurrentSlide(blueSarqApi.selectedScrollSnap())
+    }
+
+    blueSarqApi.on('select', onSelect)
+    onSelect()
+
+    return () => {
+      blueSarqApi.off('select', onSelect)
+    }
+  }, [blueSarqApi])
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -228,22 +320,26 @@ export default function Home() {
                         align: "start",
                         loop: true,
                       }}
-                      plugins={[plugin.current]}
+                      plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
                       className="w-full max-w-md"
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
+                      setApi={setBoaApi}
                     >
                       <CarouselContent>
                         <CarouselItem>
                           <div className="p-1">
                             <Card className="border border-blue-200 dark:border-blue-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/bank-of-america/IMG_7378.png" 
                                     alt="Bank of America Internship Experience"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {boaCurrentSlide + 1}/2
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -253,12 +349,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-blue-200 dark:border-blue-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/bank-of-america/IMG_7506.JPG" 
                                     alt="Bank of America Team Presentation"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {boaCurrentSlide + 1}/2
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -346,22 +447,26 @@ export default function Home() {
                         align: "start",
                         loop: true,
                       }}
-                      plugins={[plugin.current]}
+                      plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
                       className="w-full max-w-md"
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
+                      setApi={setQtApi}
                     >
                       <CarouselContent>
                         <CarouselItem>
                           <div className="p-1">
                             <Card className="border border-amber-200 dark:border-amber-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/50 dark:to-amber-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/50 dark:to-amber-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/qtathon/IMG_6799.png" 
                                     alt="Qt;Athon Competition Interface"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {qtCurrentSlide + 1}/2
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -371,12 +476,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-amber-200 dark:border-amber-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/50 dark:to-amber-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/50 dark:to-amber-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/qtathon/IMG_6806.png" 
                                     alt="Qt;Athon Award Ceremony"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {qtCurrentSlide + 1}/2
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -460,22 +570,26 @@ export default function Home() {
                         align: "start",
                         loop: true,
                       }}
-                      plugins={[plugin.current]}
+                      plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
                       className="w-full max-w-md"
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
+                      setApi={setFtcApi}
                     >
                       <CarouselContent>
                         <CarouselItem>
                           <div className="p-1">
                             <Card className="border border-red-200 dark:border-red-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/first-tech-challenge/IMG_3592.JPG" 
                                     alt="FIRST Tech Challenge Championship"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {ftcCurrentSlide + 1}/5
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -485,12 +599,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-red-200 dark:border-red-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/first-tech-challenge/IMG_3593.JPG" 
                                     alt="FIRST Tech Challenge Robot Design"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {ftcCurrentSlide + 1}/5
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -500,12 +619,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-red-200 dark:border-red-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/first-tech-challenge/IMG_5118.JPG" 
                                     alt="FIRST Tech Challenge Team Leadership"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {ftcCurrentSlide + 1}/5
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -515,12 +639,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-red-200 dark:border-red-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/first-tech-challenge/43CFFE6A-5CA9-4DD5-A715-2F8D4FB442E8.JPG" 
                                     alt="FIRST Tech Challenge Competition"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {ftcCurrentSlide + 1}/5
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -530,12 +659,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-red-200 dark:border-red-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/first-tech-challenge/image.PNG" 
                                     alt="FIRST Tech Challenge Awards"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {ftcCurrentSlide + 1}/5
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -615,22 +749,26 @@ export default function Home() {
                         align: "start",
                         loop: true,
                       }}
-                      plugins={[plugin.current]}
+                      plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
                       className="w-full max-w-md"
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
+                      setApi={setLanaiApi}
                     >
                       <CarouselContent>
                         <CarouselItem>
                           <div className="p-1">
                             <Card className="border border-emerald-200 dark:border-emerald-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/lanai-bright/IMG_4462.png" 
                                     alt="Lanai Bright Product Design"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {lanaiCurrentSlide + 1}/3
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -640,12 +778,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-emerald-200 dark:border-emerald-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/lanai-bright/IMG_7549.PNG" 
                                     alt="Lanai Bright Prototypes"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {lanaiCurrentSlide + 1}/3
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -655,12 +798,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-emerald-200 dark:border-emerald-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/lanai-bright/IMG_7550.jpg" 
                                     alt="Lanai Bright Final Installation"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {lanaiCurrentSlide + 1}/3
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -740,22 +888,26 @@ export default function Home() {
                         align: "start",
                         loop: true,
                       }}
-                      plugins={[plugin.current]}
+                      plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
                       className="w-full max-w-md"
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
+                      setApi={setBlueSarqApi}
                     >
                       <CarouselContent>
                         <CarouselItem>
                           <div className="p-1">
                             <Card className="border border-purple-200 dark:border-purple-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/blue-sarq/64903626667__A6BE0C9A-E51F-419F-A771-44DDB5C5B18C.png" 
                                     alt="Blue Sarq Soldering Robot Automation"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {blueSarqCurrentSlide + 1}/2
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
@@ -765,12 +917,17 @@ export default function Home() {
                           <div className="p-1">
                             <Card className="border border-purple-200 dark:border-purple-800 overflow-hidden">
                               <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/30">
-                                  <img 
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/30 relative">
+                                  <Image 
                                     src="/assets/experience/blue-sarq/IMG_7548.jpg" 
                                     alt="Blue Sarq Workshop and Manufacturing"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                   />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {blueSarqCurrentSlide + 1}/2
+                                  </div>
                                 </div>
                               </CardContent>
                             </Card>
