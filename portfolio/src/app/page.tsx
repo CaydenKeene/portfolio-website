@@ -11,6 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import type { CarouselApi } from "@/components/ui/carousel"
 import { GraduationCap, MapPin, Calendar, Building2, Briefcase } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -20,19 +21,19 @@ import { useState, useEffect } from "react"
 
 export default function Home() {
   const [boaCurrentSlide, setBoaCurrentSlide] = useState(0)
-  const [boaApi, setBoaApi] = useState<any>(null)
+  const [boaApi, setBoaApi] = useState<CarouselApi>()
   
   const [qtCurrentSlide, setQtCurrentSlide] = useState(0)
-  const [qtApi, setQtApi] = useState<any>(null)
+  const [qtApi, setQtApi] = useState<CarouselApi>()
   
   const [ftcCurrentSlide, setFtcCurrentSlide] = useState(0)
-  const [ftcApi, setFtcApi] = useState<any>(null)
+  const [ftcApi, setFtcApi] = useState<CarouselApi>()
   
   const [lanaiCurrentSlide, setLanaiCurrentSlide] = useState(0)
-  const [lanaiApi, setLanaiApi] = useState<any>(null)
+  const [lanaiApi, setLanaiApi] = useState<CarouselApi>()
   
   const [blueSarqCurrentSlide, setBlueSarqCurrentSlide] = useState(0)
-  const [blueSarqApi, setBlueSarqApi] = useState<any>(null)
+  const [blueSarqApi, setBlueSarqApi] = useState<CarouselApi>()
 
   // Listen for slide changes on BOA carousel
   useEffect(() => {
