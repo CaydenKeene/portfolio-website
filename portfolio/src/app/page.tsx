@@ -332,8 +332,8 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/bank-of-america/IMG_7378.png" 
-                                    alt="Bank of America Internship Experience"
+                                    src="/assets/experience/bank-of-america/IMG_7506.JPG" 
+                                    alt="Bank of America Team Presentation"
                                     fill
                                     className="object-cover"
                                   />
@@ -352,8 +352,8 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/bank-of-america/IMG_7506.JPG" 
-                                    alt="Bank of America Team Presentation"
+                                    src="/assets/experience/bank-of-america/IMG_7378.png" 
+                                    alt="Bank of America Internship Experience"
                                     fill
                                     className="object-cover"
                                   />
@@ -459,8 +459,8 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/50 dark:to-amber-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/qtathon/IMG_6799.png" 
-                                    alt="Qt;Athon Competition Interface"
+                                    src="/assets/experience/qtathon/IMG_6806.png" 
+                                    alt="Qt;Athon Award Ceremony"
                                     fill
                                     className="object-cover"
                                   />
@@ -479,8 +479,8 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/50 dark:to-amber-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/qtathon/IMG_6806.png" 
-                                    alt="Qt;Athon Award Ceremony"
+                                    src="/assets/experience/qtathon/IMG_6799.png" 
+                                    alt="Qt;Athon Competition Interface"
                                     fill
                                     className="object-cover"
                                   />
@@ -761,26 +761,6 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/lanai-bright/IMG_4462.png" 
-                                    alt="Lanai Bright Product Design"
-                                    fill
-                                    className="object-cover"
-                                  />
-                                  {/* Fixed slide indicator */}
-                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
-                                    {lanaiCurrentSlide + 1}/3
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-                          </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                          <div className="p-1">
-                            <Card className="border border-emerald-200 dark:border-emerald-800 overflow-hidden">
-                              <CardContent className="p-0">
-                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30 relative">
-                                  <Image 
                                     src="/assets/experience/lanai-bright/IMG_7549.PNG" 
                                     alt="Lanai Bright Prototypes"
                                     fill
@@ -803,6 +783,26 @@ export default function Home() {
                                   <Image 
                                     src="/assets/experience/lanai-bright/IMG_7550.jpg" 
                                     alt="Lanai Bright Final Installation"
+                                    fill
+                                    className="object-cover"
+                                  />
+                                  {/* Fixed slide indicator */}
+                                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
+                                    {lanaiCurrentSlide + 1}/3
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                          <div className="p-1">
+                            <Card className="border border-emerald-200 dark:border-emerald-800 overflow-hidden">
+                              <CardContent className="p-0">
+                                <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950/50 dark:to-emerald-900/30 relative">
+                                  <Image 
+                                    src="/assets/experience/lanai-bright/IMG_4462.png" 
+                                    alt="Lanai Bright Product Design"
                                     fill
                                     className="object-cover"
                                   />
@@ -924,6 +924,10 @@ export default function Home() {
                                     alt="Blue Sarq Workshop and Manufacturing"
                                     fill
                                     className="object-cover"
+                                    style={{ 
+                                      objectPosition: '75% center',
+                                      transform: 'scale(1)'
+                                    }}
                                   />
                                   {/* Fixed slide indicator */}
                                   <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
