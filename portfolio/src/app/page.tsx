@@ -32,8 +32,8 @@ export default function Home() {
   const [lanaiCurrentSlide, setLanaiCurrentSlide] = useState(0)
   const [lanaiApi, setLanaiApi] = useState<CarouselApi>()
   
-  const [blueSarqCurrentSlide, setBlueSarqCurrentSlide] = useState(0)
-  const [blueSarqApi, setBlueSarqApi] = useState<CarouselApi>()
+  const [blueSparqCurrentSlide, setBlueSparqCurrentSlide] = useState(0)
+  const [blueSparqApi, setBlueSparqApi] = useState<CarouselApi>()
 
   // Listen for slide changes on BOA carousel
   useEffect(() => {
@@ -99,21 +99,21 @@ export default function Home() {
     }
   }, [lanaiApi])
 
-  // Listen for slide changes on Blue Sarq carousel
+  // Listen for slide changes on Blue Sparq carousel
   useEffect(() => {
-    if (!blueSarqApi) return
+    if (!blueSparqApi) return
 
     const onSelect = () => {
-      setBlueSarqCurrentSlide(blueSarqApi.selectedScrollSnap())
+      setBlueSparqCurrentSlide(blueSparqApi.selectedScrollSnap())
     }
 
-    blueSarqApi.on('select', onSelect)
+    blueSparqApi.on('select', onSelect)
     onSelect()
 
     return () => {
-      blueSarqApi.off('select', onSelect)
+      blueSparqApi.off('select', onSelect)
     }
-  }, [blueSarqApi])
+  }, [blueSparqApi])
   
   return (
     <div className="min-h-screen bg-background">
@@ -841,7 +841,7 @@ export default function Home() {
                       <div>
                         <CardTitle className="text-2xl">Engineering Intern</CardTitle>
                         <CardDescription className="text-base mt-1">
-                          <span className="font-semibold text-purple-600">Blue Sarq, Inc</span> • Cape Coral, FL
+                          <span className="font-semibold text-purple-600">Blue Sparq, Inc</span> • Cape Coral, FL
                         </CardDescription>
                       </div>
                     </div>
@@ -870,7 +870,7 @@ export default function Home() {
                         </li>
                         <li className="flex items-start">
                           <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span>Worked on fabrication of various products such as power supplies for clients of Blue Sarq, learned about the manufacturing process that goes on behind a small hardware and software development company</span>
+                          <span>Worked on fabrication of various products such as power supplies for clients of Blue Sparq, learned about the manufacturing process that goes on behind a small hardware and software development company</span>
                         </li>
                       </ul>
                     </div>
@@ -896,7 +896,7 @@ export default function Home() {
                       }}
                       plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
                       className="w-full max-w-md"
-                      setApi={setBlueSarqApi}
+                      setApi={setBlueSparqApi}
                     >
                       <CarouselContent>
                         <CarouselItem>
@@ -905,14 +905,14 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/blue-sarq/64903626667__A6BE0C9A-E51F-419F-A771-44DDB5C5B18C.png" 
-                                    alt="Blue Sarq Soldering Robot Automation"
+                                    src="/assets/experience/blue-sparq/64903626667__A6BE0C9A-E51F-419F-A771-44DDB5C5B18C.png" 
+                                    alt="Blue Sparq Soldering Robot Automation"
                                     fill
                                     className="object-cover"
                                   />
                                   {/* Fixed slide indicator */}
                                   <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
-                                    {blueSarqCurrentSlide + 1}/2
+                                    {blueSparqCurrentSlide + 1}/2
                                   </div>
                                 </div>
                               </CardContent>
@@ -925,8 +925,8 @@ export default function Home() {
                               <CardContent className="p-0">
                                 <div className="aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950/50 dark:to-purple-900/30 relative">
                                   <Image 
-                                    src="/assets/experience/blue-sarq/IMG_7548.jpg" 
-                                    alt="Blue Sarq Workshop and Manufacturing"
+                                    src="/assets/experience/blue-sparq/IMG_7548.jpg" 
+                                    alt="Blue Sparq Workshop and Manufacturing"
                                     fill
                                     className="object-cover"
                                     style={{ 
@@ -936,7 +936,7 @@ export default function Home() {
                                   />
                                   {/* Fixed slide indicator */}
                                   <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
-                                    {blueSarqCurrentSlide + 1}/2
+                                    {blueSparqCurrentSlide + 1}/2
                                   </div>
                                 </div>
                               </CardContent>

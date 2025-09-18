@@ -99,7 +99,7 @@ export default function Projects() {
                   </div>
                   
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Contracted by the CEO of Blue Sarq to develop a comprehensive mobile platform 
+                    Contracted by the CEO of Blue Sparq to develop a comprehensive mobile platform 
                     that helps aspiring pilots master airspace regulations. Successfully deployed 
                     to the Apple App Store with full-stack architecture.
                   </p>
